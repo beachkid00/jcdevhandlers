@@ -78,20 +78,20 @@ metadata {
 				attributeState "default", action: "refresh", label: '${currentValue}', 
 					foregroundColor: "#000000",
                 backgroundColors:[
-					[value: "0W", 		color: "#153591"],
-					[value: "3000W", 	color: "#1e9cbb"],
-					[value: "6000W", 	color: "#90d2a7"],
-					[value: "9000W", 	color: "#44b621"],
-					[value: "12000W", 	color: "#f1d801"],
-					[value: "15000W", 	color: "#d04e00"], 
-					[value: "18000W", 	color: "#bc2323"]
+					[value: "0", 		color: "#153591"],
+					[value: "3000", 	color: "#1e9cbb"],
+					[value: "6000", 	color: "#90d2a7"],
+					[value: "9000", 	color: "#44b621"],
+					[value: "12000", 	color: "#f1d801"],
+					[value: "15000", 	color: "#d04e00"], 
+					[value: "18000", 	color: "#bc2323"]
 
 		  		],
 					
 					
 					
 					
-					icon: "https://raw.githubusercontent.com/constjs/jcdevhandlers/master/img/device-activity-tile@2x.png", backgroundColor: "#79b821"
+					icon: "https://raw.githubusercontent.com/constjs/jcdevhandlers/master/img/device-activity-tile@2x.png"
 			}
             tileAttribute ("statusText", key: "SECONDARY_CONTROL") {
 //           		attributeState "statusText", label:'${currentValue}'
@@ -102,13 +102,13 @@ metadata {
             state ("default", icon: "st.secondary.activity", label:'${currentValue}', 
 				foregroundColor: "#000000",
 				backgroundColors:[
-					[value: "0W", 		color: "#153591"],
-					[value: "3000W", 	color: "#1e9cbb"],
-					[value: "6000W", 	color: "#90d2a7"],
-					[value: "9000W", 	color: "#44b621"],
-					[value: "12000W", 	color: "#f1d801"],
-					[value: "15000W", 	color: "#d04e00"], 
-					[value: "18000W", 	color: "#bc2323"]
+					[value: "0", 		color: "#153591"],
+					[value: "3000", 	color: "#1e9cbb"],
+					[value: "6000", 	color: "#90d2a7"],
+					[value: "9000", 	color: "#44b621"],
+					[value: "12000", 	color: "#f1d801"],
+					[value: "15000", 	color: "#d04e00"], 
+					[value: "18000", 	color: "#bc2323"]
 
 		  		]
 		)
