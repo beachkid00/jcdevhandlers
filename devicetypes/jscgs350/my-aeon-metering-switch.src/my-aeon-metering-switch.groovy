@@ -32,7 +32,7 @@
  */
 metadata {
 	// Automatically generated. Make future change here.
-	definition (name: "My Aeon Metering Switch (JGO)", namespace: "jscgs350", author: "SmartThings") {
+	definition (name: "My Aeon Metering Switch (Updated)", namespace: "jscgs350", author: "SmartThings") {
 		capability "Energy Meter"
 		capability "Actuator"
 		capability "Switch"
@@ -142,12 +142,19 @@ metadata {
         
         standardTile("iconTile", "statusText", inactiveLabel: false, decoration: "flat", width: 1, height: 1) {
 			state "default", label:'', icon:"http://cdn.device-icons.smartthings.com/secondary/device-activity-tile@2x.png"
+	}
+      	standardTile("blankTile", "statusText", inactiveLabel: false, decoration: "flat", width: 1, height: 1) {
+			state "default", label:'', icon:"http://cdn.device-icons.smartthings.com/secondary/device-activity-tile@2x.png"
 		}
-
+        standardTile("refreshTile", "refreshTile", inactiveLabel: false, decoration: "flat", width: 1, height: 1) {
+			state "default", icon:"st.unknown.thing.thing-circle"
+		}
+		
+		
         valueTile("energyDisp", "device.energyDisp", width: 3, height: 1, inactiveLabel: false, decoration: "flat") {
             state("default", label: '${currentValue}kWh', backgroundColor:"#ffffff")
         }
-        standardTile("energyOne", "device.energyOne", width: 5, height: 1, inactiveLabel: false, decoration: "flat") {
+        valueTile("energyOne", "device.energyOne", width: 5, height: 1, inactiveLabel: false, decoration: "flat") {
             state("default", label: '${currentValue}', backgroundColor:"#ffffff")
         }
         valueTile("energyTwo", "device.energyTwo", width: 3, height: 1, inactiveLabel: false, decoration: "flat") {
@@ -170,7 +177,7 @@ metadata {
 			state "statusText", label:'${currentValue}', backgroundColor:"#ffffff"
 		}
 		main "powerDisp"
-		details(["switch", "iconTile", "statusText", "iconTile", "energyOne", "energyDisp", "energyTwo", "resetmax", "resetenergy", "refresh","configure"])
+		details(["switch", "blankTile", "statusText", "refreshTile", "energyOne", "energyDisp", "energyTwo", "resetmax", "resetenergy", "refresh","configure"])
 	}
 }
 
