@@ -119,7 +119,7 @@ metadata {
 // Watts row
 
         valueTile("powerDisp", "device.powerDisp", width: 3, height: 2, inactiveLabel: false, decoration: "flat") {
-            state ("default", icon: "st.secondary.activity", label:'Now ${currentValue}W')
+            state ("default", icon: "st.secondary.activity", label:'${currentValue}')
         }
         standardTile("powerOne", "device.powerOne", width: 2, height: 2, inactiveLabel: false, decoration: "flat") {
             state("default", label:'Low ${currentValue}')
@@ -229,7 +229,7 @@ def zwaveEvent(physicalgraph.zwave.commands.meterv1.MeterReport cmd) {
 			newValue = cmd.scaledMeterValue
             if (newValue < 3000) {								  // don't handle any wildly large readings due to firmware issues
 	            if (newValue != state.powerValue) {
-	                dispValue = newValue
+	                dispValue = Math.round(newValue)
 	                sendEvent(name: "powerDisp", value: dispValue, unit: "", displayed: false)
 	                if (newValue < state.powerLow) {
 	                    dispValue = newValue+"w"+"on "+timeString
