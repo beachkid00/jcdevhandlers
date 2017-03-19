@@ -83,7 +83,18 @@ metadata {
             }
 		}    
         valueTile("energyDisp", "device.energyDisp", width: 3, height: 1, inactiveLabel: false, decoration: "flat") {
-            state("default", label: '${currentValue}', backgroundColor:"#ffffff")
+            state("default", label: '${currentValue}', foregroundColor: "#000000",
+                backgroundColors:[
+					[value: "0 W", 		color: "#153591"],
+					[value: "3000 W", 	color: "#1e9cbb"],
+					[value: "6000 W", 	color: "#90d2a7"],
+					[value: "9000 W", 	color: "#44b621"],
+					[value: "12000 W", 	color: "#f1d801"],
+					[value: "15000 W", 	color: "#d04e00"], 
+					[value: "18000 W", 	color: "#bc2323"]
+
+		  		]
+		  )
         }    
         valueTile("energyOne", "device.energyOne", width: 5, height: 1, inactiveLabel: false, decoration: "flat") {
             state("default", label: '${currentValue}', backgroundColor:"#ffffff")
