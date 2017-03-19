@@ -78,13 +78,13 @@ metadata {
 				attributeState "default", action: "refresh", label: '${currentValue}', 
 					foregroundColor: "#000000",
                 backgroundColors:[
-					[value: "0 W", 		color: "#153591"],
-					[value: "3000 W", 	color: "#1e9cbb"],
-					[value: "6000 W", 	color: "#90d2a7"],
-					[value: "9000 W", 	color: "#44b621"],
-					[value: "12000 W", 	color: "#f1d801"],
-					[value: "15000 W", 	color: "#d04e00"], 
-					[value: "18000 W", 	color: "#bc2323"]
+					[value: "0W", 		color: "#153591"],
+					[value: "3000W", 	color: "#1e9cbb"],
+					[value: "6000W", 	color: "#90d2a7"],
+					[value: "9000W", 	color: "#44b621"],
+					[value: "12000W", 	color: "#f1d801"],
+					[value: "15000W", 	color: "#d04e00"], 
+					[value: "18000W", 	color: "#bc2323"]
 
 		  		],
 					
@@ -99,18 +99,18 @@ metadata {
             }
 		}
 	valueTile("powerDisp2", "device.powerDisp", width: 3, height: 2, inactiveLabel: false, decoration: "flat") {
-            state ("default", icon: "st.secondary.activity", label:'${currentValue}W', 
+            state ("default", icon: "st.secondary.activity", label:'${currentValue}', 
 				foregroundColor: "#000000",
 				backgroundColors:[
-					[value: "0", 	color: "#153591"],
-					[value: "25", 	color: "#1e9cbb"],
-					[value: "50", 	color: "#90d2a7"],
-					[value: "100", 	color: "#44b621"],
-					[value: "150", 	color: "#f1d801"],
-					[value: "300", 	color: "#d04e00"], 
-					[value: "500", 	color: "#bc2323"]
+					[value: "0W", 		color: "#153591"],
+					[value: "3000W", 	color: "#1e9cbb"],
+					[value: "6000W", 	color: "#90d2a7"],
+					[value: "9000W", 	color: "#44b621"],
+					[value: "12000W", 	color: "#f1d801"],
+					[value: "15000W", 	color: "#d04e00"], 
+					[value: "18000W", 	color: "#bc2323"]
 
-				]
+		  		]
 		)
         }
         valueTile("energyDisp", "device.energyDisp", width: 3, height: 1, inactiveLabel: false, decoration: "flat") {
