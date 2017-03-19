@@ -75,15 +75,8 @@ metadata {
 	tiles(scale: 2) {
 		multiAttributeTile(name:"powerDisp", type: "lighting", width: 6, height: 4, decoration: "flat"){
 			tileAttribute ("device.powerDisp", key: "PRIMARY_CONTROL") {
-				attributeState "default", action: "refresh", label: '${currentValue}', icon: "https://raw.githubusercontent.com/constjs/jcdevhandlers/master/img/device-activity-tile@2x.png", backgroundColor: "#79b821"
-			}
-            tileAttribute ("statusText", key: "SECONDARY_CONTROL") {
-//           		attributeState "statusText", label:'${currentValue}'
-           		attributeState "statusText", label:''                
-            }
-		}    
-        valueTile("energyDisp", "device.energyDisp", width: 3, height: 1, inactiveLabel: false, decoration: "flat") {
-            state("default", label: '${currentValue}', foregroundColor: "#000000",
+				attributeState "default", action: "refresh", label: '${currentValue}', 
+					foregroundColor: "#000000",
                 backgroundColors:[
 					[value: "0 W", 		color: "#153591"],
 					[value: "3000 W", 	color: "#1e9cbb"],
@@ -93,8 +86,20 @@ metadata {
 					[value: "15000 W", 	color: "#d04e00"], 
 					[value: "18000 W", 	color: "#bc2323"]
 
-		  		]
-		  )
+		  		],
+					
+					
+					
+					
+					icon: "https://raw.githubusercontent.com/constjs/jcdevhandlers/master/img/device-activity-tile@2x.png", backgroundColor: "#79b821"
+			}
+            tileAttribute ("statusText", key: "SECONDARY_CONTROL") {
+//           		attributeState "statusText", label:'${currentValue}'
+           		attributeState "statusText", label:''                
+            }
+		}    
+        valueTile("energyDisp", "device.energyDisp", width: 3, height: 1, inactiveLabel: false, decoration: "flat") {
+            state("default", label: '${currentValue}', backgroundColor:"#ffffff")
         }    
         valueTile("energyOne", "device.energyOne", width: 5, height: 1, inactiveLabel: false, decoration: "flat") {
             state("default", label: '${currentValue}', backgroundColor:"#ffffff")
