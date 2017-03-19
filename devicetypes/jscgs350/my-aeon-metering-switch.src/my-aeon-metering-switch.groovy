@@ -251,12 +251,12 @@ def zwaveEvent(physicalgraph.zwave.commands.meterv1.MeterReport cmd) {
 	                dispValue = Math.round(newValue)
 	                sendEvent(name: "powerDisp", value: dispValue, unit: "", displayed: false)
 	                if (newValue < state.powerLow) {
-	                    dispValue = newValue+"w"+"on "+timeString
+	                    dispValue = Math.round(newValue)+"w"+"on "+timeString
 	                    sendEvent(name: "powerOne", value: dispValue as String, unit: "", displayed: false)
 	                    state.powerLow = newValue
 	                }
 	                if (newValue > state.powerHigh) {
-	                    dispValue = newValue+"w "+"on "+timeString
+	                    dispValue = Math.round(newValue)+"w "+"on "+timeString
 	                    sendEvent(name: "powerTwo", value: dispValue as String, unit: "", displayed: false)
 	                    state.powerHigh = newValue
 	                }
