@@ -45,7 +45,7 @@
  *
  */
 metadata {
-    definition (name: "My Aeon Home Energy Monitor (no battery)", namespace: "jscgs350", author: "SmartThings") 
+    definition (name: "My Aeon Home Energy Monitor (JGO)", namespace: "jscgs350", author: "SmartThings") 
 {
     capability "Energy Meter"
     capability "Power Meter"
