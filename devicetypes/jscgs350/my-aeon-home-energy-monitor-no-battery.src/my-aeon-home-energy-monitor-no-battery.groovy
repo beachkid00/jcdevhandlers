@@ -45,7 +45,7 @@
  *
  */
 metadata {
-    definition (name: "My Aeon Home Energy Monitor (JGO)", namespace: "jscgs350", author: "SmartThings") 
+    definition (name: "My Aeon Home Energy Monitor (Updated)", namespace: "jscgs350", author: "SmartThings") 
 {
     capability "Energy Meter"
     capability "Power Meter"
@@ -97,7 +97,22 @@ metadata {
 //           		attributeState "statusText", label:'${currentValue}'
            		attributeState "statusText", label:''                
             }
-		}    
+		}
+	valueTile("powerDisp2", "device.powerDisp", width: 3, height: 2, inactiveLabel: false, decoration: "flat") {
+            state ("default", icon: "st.secondary.activity", label:'${currentValue}W', 
+				foregroundColor: "#000000",
+				backgroundColors:[
+					[value: "0", 	color: "#153591"],
+					[value: "25", 	color: "#1e9cbb"],
+					[value: "50", 	color: "#90d2a7"],
+					[value: "100", 	color: "#44b621"],
+					[value: "150", 	color: "#f1d801"],
+					[value: "300", 	color: "#d04e00"], 
+					[value: "500", 	color: "#bc2323"]
+
+				]
+		)
+        }
         valueTile("energyDisp", "device.energyDisp", width: 3, height: 1, inactiveLabel: false, decoration: "flat") {
             state("default", label: '${currentValue}', backgroundColor:"#ffffff")
         }    
@@ -129,7 +144,7 @@ metadata {
 			state "default", label:'Reset Energy', action:"reset", icon:"st.secondary.refresh-icon"
 		}
 
-        main (["powerDisp"])
+        main (["powerDisp2"])
         details(["powerDisp", "iconTile", "statusText", "iconTile", "energyOne", "energyDisp", "energyTwo", "resetmin", "resetmax", "resetenergy", "reset", "refresh", "configure"])
         }
 
