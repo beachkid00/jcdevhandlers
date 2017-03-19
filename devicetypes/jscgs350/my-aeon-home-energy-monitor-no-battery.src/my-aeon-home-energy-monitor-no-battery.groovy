@@ -255,7 +255,7 @@ def zwaveEvent(physicalgraph.zwave.commands.meterv1.MeterReport cmd) {
         }
         else if (cmd.scale==2) {                
 //            newValue = Math.round(cmd.scaledMeterValue*100)/100		// Round to 2 decimal positions
-			newValue = cmd.scaledMeterValue								// Remove all rounding
+			newValue = Math.round(cmd.scaledMeterValue)								// Round
             if (newValue < 0) {newValue = state.powerValue}				// Don't want to see negative numbers as a valid minimum value (something isn't right with the meter)
 			if (newValue < wattsLimit) {								// don't handle any wildly large readings due to firmware issues	
 	            if (newValue != state.powerValue) {
