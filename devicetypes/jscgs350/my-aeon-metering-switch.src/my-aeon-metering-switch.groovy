@@ -200,7 +200,7 @@ def parse(String description) {
 	}
         
     def statusTextmsg = ""
-    statusTextmsg = "Maximum of ${device.currentState('powerTwo')?.value}"
+    statusTextmsg = "Max of ${device.currentState('powerTwo')?.value}"
     sendEvent(name: "statusText", value: statusTextmsg)
     if (state.debug) log.debug statusTextmsg
     
@@ -345,7 +345,7 @@ def resetmax() {
     if (state.debug) log.debug "${device.name} reset"
     state.powerHigh = 0   
 	def timeString = new Date().format("MM-dd-yy h:mm a", location.timeZone)
-    sendEvent(name: "energyOne", value: "Watts Data Maximum Value Reset On:\n"+timeString, unit: "")    
+    sendEvent(name: "energyOne", value: "Watts Data Max Value Reset On:\n"+timeString, unit: "")    
     sendEvent(name: "powerTwo", value: "", unit: "")
     def cmd = delayBetween( [
         zwave.meterV2.meterGet(scale: 0).format()
